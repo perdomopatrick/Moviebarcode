@@ -1,0 +1,29 @@
+[project]
+name = "moviebarcode"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "customtkinter>=5.2.2",
+    "pillow>=12.1.1",
+]
+
+
+[tool.ruff.lint]
+select = [
+    "E",    # Pycodestyle errors (style issues)
+    "W",    # Pycodestyle warnings (style issues)
+    "I",    # isort – import ordering checks
+	"N",    # PEP8 Naming – naming conventions
+	"UP",   # Pyupgrade – upgrades syntax to newer Python versions
+	"PL",   # Pylint – integration with Pylint conventions
+    "TRY",  # Tryceratops – try/except usage suggestions
+	"RUF",  # Ruff-specific rules – additional Ruff checks
+]
+ignore = [
+    "E501",  # Pycodestyle - line too long
+]
+
+[tool.ruff.format]
+indent-style = "tab"

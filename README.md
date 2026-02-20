@@ -2,10 +2,15 @@
 
 text
 
-### Set up environment
+### Set up environment:
 ```bat
-python -m venv venv
-venv\Scripts\activate
-python -m pip install --upgrade pip
-pip install -r requirements.txt
+uv sync
+```
+
+### Run:
+```bat
+.venv\Scripts\activate
+docker build -t moviebarcode .
+main.py
+deactivate :: to leave virtual environment
 ```
