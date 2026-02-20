@@ -4,10 +4,16 @@ OUTPUT="$2"
 
 START_TIME=$(date +%s)
 
-DURATION_STR=$(ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "$INPUT")
-DURATION=${DURATION_STR%.*}
+DURATION=$(ffprobe -v error \
+-show_entries format=duration \
+-of default=noprint_wrappers=1:nokey=1 "$INPUT" \
+| awk '{print int($1)}')
 FRAMES=$DURATION
-[ "$FRAMES" -lt 1 ] && FRAMES=1
+
+if [[ -z "$DURATION" || "$DURATION" -lt 1 ]]; then
+    echo "Invalid duration (default to 1 frame)"
+    FRAMES=1
+fi
 
 echo "-------------------------------------------------------"
 echo "Generating Moviebarcode (1 slice/sec)"
