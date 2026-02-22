@@ -25,5 +25,5 @@ ignore = [
     "E501",  # Pycodestyle - line too long
 ]
 
-[tool.ruff.format]
-indent-style = "tab"
+# [tool.ruff.format]
+# indent-style = "tab"

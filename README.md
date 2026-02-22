@@ -19,7 +19,7 @@ docker build -t moviebarcode .
 main.py
 ```
 ```bat
-deactivate :: to leave virtual environment
+deactivate & :: to leave virtual environment
 ```
 
 ### Tech:
